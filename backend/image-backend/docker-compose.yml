@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  image-backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads  # 持久化上传的文件
+      - ./logs:/app/logs        # 日志目录
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=False
+    restart: unless-stopped
+
+  # 可以在这里添加Redis等服务
+  # redis:
+  #   image: redis:alpine
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped

@@ -1,0 +1,15 @@
+name: image-backend
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - fastapi==0.104.1
+    - uvicorn==0.24.0
+    - python-multipart==0.0.6
+    - pillow==10.1.0
+    - onnxruntime==1.16.0
+    - python-dotenv==1.0.0
+    - aiofiles==23.2.1
